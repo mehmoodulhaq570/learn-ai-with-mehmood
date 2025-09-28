@@ -2,7 +2,7 @@
   "name": "my-courses-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mehmoodulhaq570.github.io/my-courses-website",
+  "homepage": "https://mehmoodulhaq570.github.io/learn-ai-with-mehmood",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
