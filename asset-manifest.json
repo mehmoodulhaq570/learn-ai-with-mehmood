@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/my-courses-website/static/css/main.f855e6bc.css",
-    "main.js": "/my-courses-website/static/js/main.61946f24.js",
-    "static/js/453.5ab327d6.chunk.js": "/my-courses-website/static/js/453.5ab327d6.chunk.js",
-    "static/media/logo.svg": "/my-courses-website/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/my-courses-website/index.html",
-    "main.f855e6bc.css.map": "/my-courses-website/static/css/main.f855e6bc.css.map",
-    "main.61946f24.js.map": "/my-courses-website/static/js/main.61946f24.js.map",
-    "453.5ab327d6.chunk.js.map": "/my-courses-website/static/js/453.5ab327d6.chunk.js.map"
+    "main.css": "/learn-ai-with-mehmood/static/css/main.ade30fdc.css",
+    "main.js": "/learn-ai-with-mehmood/static/js/main.ef78deb2.js",
+    "static/js/453.5ab327d6.chunk.js": "/learn-ai-with-mehmood/static/js/453.5ab327d6.chunk.js",
+    "index.html": "/learn-ai-with-mehmood/index.html",
+    "main.ade30fdc.css.map": "/learn-ai-with-mehmood/static/css/main.ade30fdc.css.map",
+    "main.ef78deb2.js.map": "/learn-ai-with-mehmood/static/js/main.ef78deb2.js.map",
+    "453.5ab327d6.chunk.js.map": "/learn-ai-with-mehmood/static/js/453.5ab327d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.61946f24.js"
+    "static/css/main.ade30fdc.css",
+    "static/js/main.ef78deb2.js"
   ]
 }
