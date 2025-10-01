@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import NewsletterForm from "./NewsletterForm";
 import { motion } from "framer-motion";
 import {
   Sun,
@@ -156,7 +157,7 @@ function Navbar({ darkMode, toggleDarkMode, onNavigate }) {
 }
 
 // ---------------------- Hero ----------------------
-function Hero({ darkMode, onBrowse }) {
+function Hero({ darkMode, onBrowse, onOpenNewsletter }) {
   return (
     <section
       id="home"
@@ -200,19 +201,17 @@ function Hero({ darkMode, onBrowse }) {
               Browse Courses
             </motion.button>
 
-            <a
-              href="https://forms.gle/yournewsletterform"
-              target="_blank"
-              rel="noreferrer"
+            <button
+              onClick={onOpenNewsletter}
               className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-gray-300 dark:border-gray-700
-                          text-gray-700 dark:text-gray-200
-                          bg-white dark:bg-gray-900
-                          hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-500
-                          hover:text-white transition-all duration-300 shadow-sm"
+             text-gray-700 dark:text-gray-200
+             bg-white dark:bg-gray-900
+             hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-500
+             hover:text-white transition-all duration-300 shadow-sm"
             >
               <Award className="w-4 h-4" />
               Join Newsletter
-            </a>
+            </button>
           </div>
 
           <div className="mt-8 flex gap-6">
@@ -243,7 +242,7 @@ function Hero({ darkMode, onBrowse }) {
         <div className="flex-1 flex justify-center">
           <div className="w-full max-w-md p-6 rounded-2xl shadow-lg bg-white dark:bg-gray-800">
             <img
-              src={`${process.env.PUBLIC_URL}/hologram.png`}
+              src={`${process.env.PUBLIC_URL}/hologram_c.png`}
               alt="Future of AI"
               className="w-full h-60 object-cover rounded-lg"
             />
@@ -357,13 +356,13 @@ function Courses({ darkMode }) {
       level: "Beginner",
       duration: "6 weeks",
       weeks: 6,
-      link: "https://forms.gle/HmhP4DEC8Q3q4Syw8",
+      link: "https://forms.gle/CiHzX2LtxawCwkSB8",
       curriculum: [
         { week: "Week 1", content: "Intro to ML & Linear Models" },
         { week: "Week 2", content: "Tree-based Methods & Ensembles" },
         { week: "Week 3", content: "SVM, KNN, Other Models" },
         { week: "Week 4", content: "Evaluation Metrics" },
-        { week: "Week 5", content: "Mini Project" },
+        { week: "Week 5", content: "Mini Projects" },
       ],
     },
     {
@@ -373,13 +372,20 @@ function Courses({ darkMode }) {
       level: "Advanced",
       duration: "8 weeks",
       weeks: 8,
-      link: "https://forms.gle/yourformlink2",
+      link: "https://forms.gle/gr5jqexjF7w2AZBa9",
       curriculum: [
         { week: "Week 1", content: "Neural Networks Basics" },
-        { week: "Week 2", content: "CNNs for Images" },
-        { week: "Week 3", content: "RNNs & LSTMs" },
-        { week: "Week 4", content: "Transformers" },
-        { week: "Week 5", content: "Capstone Project" },
+        { week: "Week 2", content: "CNNs for Images Classification" },
+        { week: "Week 3", content: "RNNs, LSTMs & GRU" },
+        { week: "Week 4", content: "Transfer Learning" },
+        { week: "Week 4", content: "Embadding" },
+        {
+          week: "Week 5",
+          content: "Data Augmentation and Handling Imbalance data",
+        },
+        { week: "Week 6", content: "Optimizing & Quantization" },
+        { week: "Week 7", content: "BERT and Classification" },
+        { week: "Week 8", content: "Deep Learning Project" },
       ],
     },
     {
@@ -389,12 +395,14 @@ function Courses({ darkMode }) {
       level: "Intermediate",
       duration: "6 weeks",
       weeks: 6,
-      link: "https://forms.gle/yourformlink3",
+      link: "https://forms.gle/ATnozysL74gh19bD6",
       curriculum: [
         { week: "Week 1", content: "Text Preprocessing & Embeddings" },
         { week: "Week 2", content: "Sequence Models" },
         { week: "Week 3", content: "Transformers" },
-        { week: "Week 4", content: "NLP Project" },
+        { week: "Week 4", content: "BOW & TF-IDF" },
+        { week: "Week 5", content: "Spacy and Gensim" },
+        { week: "Week 6", content: "NLP Project" },
       ],
     },
   ];
@@ -633,7 +641,7 @@ function FAQ({ darkMode }) {
 }
 
 // ---------------------- Newsletter ----------------------
-function Newsletter({ darkMode }) {
+function Newsletter({ darkMode, onOpenNewsletter }) {
   return (
     <section className={`${darkMode ? "bg-gray-900" : "bg-indigo-50"} py-12`}>
       <div className="max-w-3xl mx-auto px-6 text-center">
@@ -649,14 +657,13 @@ function Newsletter({ darkMode }) {
           ideas.
         </p>
         <div className="mt-6 flex justify-center">
-          <a
-            href="https://forms.gle/yournewsletterform"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full shadow"
+          <button
+            onClick={onOpenNewsletter}
+            className="inline-flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full shadow hover:scale-105 transition"
           >
+            <Award className="w-4 h-4" />
             Subscribe
-          </a>
+          </button>
         </div>
       </div>
     </section>
@@ -696,6 +703,7 @@ function Footer({ darkMode }) {
 
 // ---------------------- App (Main) ----------------------
 export default function App() {
+  const [newsletterOpen, setNewsletterOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const homeRef = useRef(null);
   const coursesRef = useRef(null);
@@ -741,7 +749,11 @@ export default function App() {
       />
       <main>
         <section id="home">
-          <Hero darkMode={darkMode} onBrowse={() => scrollTo("courses")} />
+          <Hero
+            darkMode={darkMode}
+            onBrowse={() => scrollTo("courses")}
+            onOpenNewsletter={() => setNewsletterOpen(true)}
+          />
         </section>
         <section id="courses">
           <Courses darkMode={darkMode} />
@@ -756,10 +768,27 @@ export default function App() {
           <FAQ darkMode={darkMode} />
         </section>
         <section id="newsletter">
-          <Newsletter darkMode={darkMode} />
+          <Newsletter
+            darkMode={darkMode}
+            onOpenNewsletter={() => setNewsletterOpen(true)}
+          />
         </section>
       </main>
       <Footer darkMode={darkMode} />
+
+      {newsletterOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl max-w-md w-full relative">
+            <button
+              onClick={() => setNewsletterOpen(false)}
+              className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
+            >
+              ✕
+            </button>
+            <NewsletterForm />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
