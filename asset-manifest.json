@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/learn-ai-with-mehmood/static/css/main.ade30fdc.css",
-    "main.js": "/learn-ai-with-mehmood/static/js/main.ef78deb2.js",
+    "main.css": "/learn-ai-with-mehmood/static/css/main.791a2341.css",
+    "main.js": "/learn-ai-with-mehmood/static/js/main.59b54c84.js",
     "static/js/453.5ab327d6.chunk.js": "/learn-ai-with-mehmood/static/js/453.5ab327d6.chunk.js",
     "index.html": "/learn-ai-with-mehmood/index.html",
-    "main.ade30fdc.css.map": "/learn-ai-with-mehmood/static/css/main.ade30fdc.css.map",
-    "main.ef78deb2.js.map": "/learn-ai-with-mehmood/static/js/main.ef78deb2.js.map",
+    "main.791a2341.css.map": "/learn-ai-with-mehmood/static/css/main.791a2341.css.map",
+    "main.59b54c84.js.map": "/learn-ai-with-mehmood/static/js/main.59b54c84.js.map",
     "453.5ab327d6.chunk.js.map": "/learn-ai-with-mehmood/static/js/453.5ab327d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ade30fdc.css",
-    "static/js/main.ef78deb2.js"
+    "static/css/main.791a2341.css",
+    "static/js/main.59b54c84.js"
   ]
 }
